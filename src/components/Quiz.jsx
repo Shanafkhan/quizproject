@@ -45,7 +45,14 @@ export default function Quiz() {
 
   return (
     <div id="quiz">
-      <Question />
+      <Question 
+      key={activeQuestionIndex}
+      questionText={QUESTIONS[activeQuestionIndex].text} 
+      answers={QUESTIONS[activeQuestionIndex].answers}
+       onSelectAnswer={handleSelectedAnswer} 
+       selectedAnswer={userAnswer[userAnswer.length - 1]} 
+       answerState={answerState} 
+       onSkipAnswer={handleSkipAnswer}/>
     </div>
   );
 }
